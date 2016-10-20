@@ -1,15 +1,7 @@
-table
-  tr
-    td= element-tic-tac-toe position='field-0'
-    td= element-tic-tac-toe position='field-1'
-    td= element-tic-tac-toe position='field-2'
-  tr
-    td= element-tic-tac-toe position='field-3'
-    td= element-tic-tac-toe position='field-4'
-    td= element-tic-tac-toe position='field-5'
-  tr
-    td= element-tic-tac-toe position='field-6'
-    td= element-tic-tac-toe position='field-7'
-    td= element-tic-tac-toe position='field-8'
+.layout-column.layout-align-center-center.board
+  each fields as |row|
+    .layout-row.layout-align-center-center
+      each row as |fieldId|
+        element-tic-tac-toe position=fieldId takeIt=(action 'makeNextMove')
 
 = yield
