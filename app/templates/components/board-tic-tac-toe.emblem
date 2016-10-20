@@ -1,0 +1,15 @@
+table
+  tr
+    td= element-tic-tac-toe position='field-0'
+    td= element-tic-tac-toe position='field-1'
+    td= element-tic-tac-toe position='field-2'
+  tr
+    td= element-tic-tac-toe position='field-3'
+    td= element-tic-tac-toe position='field-4'
+    td= element-tic-tac-toe position='field-5'
+  tr
+    td= element-tic-tac-toe position='field-6'
+    td= element-tic-tac-toe position='field-7'
+    td= element-tic-tac-toe position='field-8'
+
+= yield

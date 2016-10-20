@@ -2,4 +2,5 @@ paper-toolbar
   paper-toolbar-tools
     h1 Tic Tac Toe
 
+board-tic-tac-toe
 = outlet
