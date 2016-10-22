@@ -2,7 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
-  lastMove: 'O',
   nextMoves: {
     'X': 'O',
     'O': 'X'
@@ -17,7 +16,7 @@ export default Ember.Component.extend({
   }),
   actions: {
     makeNextMove(field) {
-      if (this.get(`game.${field}`) === undefined) {
+      if (this.get(`game.${field}`) === "") {
         let move = this.get('nextMove');
         this.set('game.lastMove', move);
         this.set(`game.${field}`, move);
@@ -25,7 +24,7 @@ export default Ember.Component.extend({
       }
     },
     newGame() {
-      this.set('game', this.get('store').createRecord('game', {lastMove: this.lastMove}));
+      this.set('game', this.get('store').createRecord('game'));
       this.get('game').save();
     }
   }

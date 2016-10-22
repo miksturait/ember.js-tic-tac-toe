@@ -1,14 +1,14 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  lastMove: DS.attr(),
-  field1: DS.attr(),
-  field2: DS.attr(),
-  field3: DS.attr(),
-  field4: DS.attr(),
-  field5: DS.attr(),
-  field6: DS.attr(),
-  field7: DS.attr(),
-  field8: DS.attr(),
-  field9: DS.attr()
+  lastMove: DS.attr("string", {defaultValue: "O"}),
+  field1: DS.attr("string", { defaultValue: ""}),
+  field2: DS.attr("string", { defaultValue: ""}),
+  field3: DS.attr("string", { defaultValue: ""}),
+  field4: DS.attr("string", { defaultValue: ""}),
+  field5: DS.attr("string", { defaultValue: ""}),
+  field6: DS.attr("string", { defaultValue: ""}),
+  field7: DS.attr("string", { defaultValue: ""}),
+  field8: DS.attr("string", { defaultValue: ""}),
+  field9: DS.attr("string", { defaultValue: ""})
 });
