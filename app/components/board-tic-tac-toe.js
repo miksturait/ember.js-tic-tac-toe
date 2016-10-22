@@ -21,10 +21,12 @@ export default Ember.Component.extend({
         let move = this.get('nextMove');
         this.set('game.lastMove', move);
         this.set(`game.${field}`, move);
+        this.get('game').save();
       }
     },
     newGame() {
       this.set('game', this.get('store').createRecord('game', {lastMove: this.lastMove}));
+      this.get('game').save();
     }
   }
 });
