@@ -22,10 +22,6 @@ export default Ember.Component.extend({
         this.set(`game.${field}`, move);
         this.get('game').save();
       }
-    },
-    newGame() {
-      this.set('game', this.get('store').createRecord('game'));
-      this.get('game').save();
     }
   }
 });
