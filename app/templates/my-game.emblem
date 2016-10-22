@@ -1,3 +1,5 @@
 link-to 'playWithMe' model.id
   h4 Zaproś drugiego gracza:
-board-tic-tac-toe game=model
+
+board-tic-tac-toe game=model player='O'
+
