@@ -1,7 +1,11 @@
-.layout-column.layout-align-center-center.board
-  each fields as |row|
-    .layout-row.layout-align-center-center
-      each row as |fieldId|
-        element-tic-tac-toe position=fieldId takeIt=(action 'makeNextMove')
+span click="newGame" Nowa Gra
+
+if game
+  .layout-column.layout-align-center-center.board
+    each fields as |row|
+      .layout-row.layout-align-center-center
+        each row as |fieldId|
+          .field click="'makeNextMove' fieldId"
+            = get game fieldId
 
 = yield

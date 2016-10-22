@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  store: Ember.inject.service(),
   lastMove: 'O',
   nextMoves: {
     'X': 'O',
@@ -9,15 +10,21 @@ export default Ember.Component.extend({
   fields: Ember.computed('size', function () {
     // TODO rewrite as more generic
     let fieldIds = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-    return fieldIds.map((list) => list.map((x) => `field_${x}`));
+    return fieldIds.map((list) => list.map((x) => `field${x}`));
   }),
-  nextMove: Ember.computed('lastMove', function () {
-    return this.nextMoves[this.lastMove];
+  nextMove: Ember.computed('game.lastMove', function () {
+    return this.nextMoves[this.get('game.lastMove')];
   }),
   actions: {
-    makeNextMove() {
-      this.set('lastMove', this.get('nextMove'));
-      return this.get('lastMove');
+    makeNextMove(field) {
+      if (this.get(`game.${field}`) === undefined) {
+        let move = this.get('nextMove');
+        this.set('game.lastMove', move);
+        this.set(`game.${field}`, move);
+      }
+    },
+    newGame() {
+      this.set('game', this.get('store').createRecord('game', {lastMove: this.lastMove}));
     }
   }
 });
