@@ -16,6 +16,13 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    firebase: {
+      apiKey: "AIzaSyBFU6n4StI1feEqDstxSFGgJIj8sewD0os",
+      authDomain: "superdojo-278fc.firebaseapp.com",
+      databaseURL: "https://superdojo-278fc.firebaseio.com",
+      storageBucket: "",
+      messagingSenderId: "718144912452"
     }
   };
 
