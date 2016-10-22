@@ -1,4 +1,5 @@
-span click="newGame" Nowa Gra
+paper-button onClick="newGame"
+  | Nowa Gra
 
 if game
   .layout-column.layout-align-center-center.board
